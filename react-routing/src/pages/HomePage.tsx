@@ -1,8 +1,7 @@
 // Import the custom hook that provides the home page features
-import { useHomeFeatures } from '@/hooks/Home/useHomeFeatures';
+import { useHomeFeatures } from '../hooks/Home/useHomeFeatures';
 // Import Ant Design UI components used on this page
 import { Card, Row, Col, Typography, Button } from 'antd';
-import type { MouseEventHandler, ReactElement, JSXElementConstructor, ReactNode, ReactPortal, Key } from 'react';
 
 
 // Destructure Title and Paragraph components from Ant Design's Typography
@@ -35,7 +34,7 @@ const HomePage = () => {
       */}
       <Row gutter={[24, 24]} justify="center">
         {/* Map over features from the hook and create a responsive column for each */}
-        {features.map((feature: { action: MouseEventHandler<HTMLElement> | undefined; icon: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | null | undefined; title: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | null | undefined; description: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | null | undefined; }, index: Key | null | undefined) => (
+        {features.map((feature, index) => (
           // Col defines responsive widths: full width on xs, one-third on md
           <Col xs={24} md={8} key={index}>
             {/*
